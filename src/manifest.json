@@ -1,0 +1,17 @@
+{
+  "name": "Angular Extension",
+  "version": "0.1.0",
+  "description": "Build a Chrome Extension with Angular",
+  "manifest_version": 2,
+  // "background": {
+  //     "scripts": [
+  //         "background.js",
+  //         "runtime.js"
+  //     ]
+  // },
+  // "action": {
+  // "page_action": { // disabled by default for all pages - manifest_version of 2 or lower
+  "browser_action": { // enabled by default for all pages - manifest_version of 2 or lower
+      "default_popup": "index.html"
+  }
+}

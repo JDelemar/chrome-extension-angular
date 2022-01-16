@@ -1,27 +1,39 @@
-# ChromeExtensionAngular
+# Chrome Extension Angular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.3.
 
-## Development server
+## Quick Start
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- Quick Start
+  - Clone this repo
+  - Install packages `npm install`
+  - Build `npm run build`
+  - Load extension in Chrome
 
-## Code scaffolding
+### Notes
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Notes
+  - Create from scratch
+    - Create an angular app `npx -p @angular/cli ng new angular-extension --style=scss`
+    - Create a `manifest.json` file with similar contents in the `/src` folder
+    - Add `src/manifest.json` to `angular.json` `project/.../architect/build/options/assets`
+    - Build `npm run build` or watch `npm run watch`
+    - Load extension in Chrome
+      - Open Chrome
+      - Open the Extensions Management page by navigating to `chrome://extensions`
+      - Enable Developer Mode by toggling the switch next to Developer Mode
+      - Click the Load unpacked button and select the extension directory (dist/angular-chrome-extension)
+      - You should be able to see the extension in Chrome
+    - If you change the `manifest` you have to reload the extension, if you change any source file open and close the popup
+  - Deploy
+    - Need a better way than copying the dist folder and loading the extension in raw format
+    - Also the production deployment is not loading the material design icons
 
-## Build
+#### References
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- References
+  - Google Chrome Extensions API Reference
+    - [chrome.cookies](https://developer.chrome.com/docs/extensions/reference/cookies/)
+  - [Chrome Extensions samples](https://github.com/GoogleChrome/chrome-extensions-samples)
+  - [Chrome Extension with Angular — from Zero to a Little Hero](https://www.justjeb.com/post/chrome-extension-with-angular-from-zero-to-a-little-hero)
+    - [GitHub source code](https://github.com/just-jeb/angular-chrome-extension)
